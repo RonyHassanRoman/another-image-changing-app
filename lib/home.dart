@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class AppHome extends StatefulWidget {
   const AppHome({Key? key}) : super(key: key);
 
@@ -8,10 +9,9 @@ class AppHome extends StatefulWidget {
 }
 
 class _AppHomeState extends State<AppHome> {
-  
+  var imageNumber = 1;
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(),
       body: Container(
@@ -19,9 +19,16 @@ class _AppHomeState extends State<AppHome> {
         width: double.infinity,
         child: Column(
           children: [
-            Expanded(child: 
-            
-          Image.asset('assets/ball1.png'),),
+            Expanded(
+              child: TextButton(
+                onPressed: () {
+                  setState(() {
+                    imageNumber = 2;
+                  });
+                },
+                child: Image.asset('assets/ball$imageNumber.png'),
+              ),
+            ),
           ],
         ),
       ),

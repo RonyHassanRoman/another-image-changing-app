@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'dart:math';
 
 class AppHome extends StatefulWidget {
   const AppHome({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _AppHomeState extends State<AppHome> {
               child: TextButton(
                 onPressed: () {
                   setState(() {
-                    imageNumber = 2;
+                    imageNumber = Random().nextInt(5) + 1;
                   });
                 },
                 child: Image.asset('assets/ball$imageNumber.png'),
